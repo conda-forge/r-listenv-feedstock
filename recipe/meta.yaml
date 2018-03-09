@@ -1,4 +1,4 @@
-{% set version = '0.6.0' %}
+{% set version = "0.7.0" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/listenv_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/listenv/listenv_{{ version }}.tar.gz
-  sha256: a737f08123b8bd67b63bb9843d0b6316408516d831203df8c369f3e32a48d84f
+  sha256: 6126020b111870baea08b36afa82777cd578e88c17db5435cd137f11b3964555
 
 build:
   number: 0
