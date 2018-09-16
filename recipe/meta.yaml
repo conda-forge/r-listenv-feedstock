@@ -1,5 +1,4 @@
-{% set version = "0.7.0" %}
-
+{% set version = '0.7.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,28 +9,29 @@ package:
 source:
   fn: listenv_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/listenv_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/listenv/listenv_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/listenv_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/listenv/listenv_{{ version }}.tar.gz
   sha256: 6126020b111870baea08b36afa82777cd578e88c17db5435cd137f11b3964555
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-
   run:
     - r-base
 
 test:
   commands:
-    - $R -e "library('listenv')"  # [not win]
+    - $R -e "library('listenv')"           # [not win]
     - "\"%R%\" -e \"library('listenv')\""  # [win]
 
 about:
@@ -39,8 +39,8 @@ about:
   license: LGPL (>= 2.1)
   summary: List environments are environments that have list-like properties.  For instance,
     the elements of a list environment are ordered and can be accessed and iterated
-    over using index subsetting, e.g. 'x <- listenv(a=1, b=2); for (i in seq_along(x))
-    x[[i]] <- x[[i]]^2; y <- as.list(x)'.
+    over using index subsetting, e.g. 'x <- listenv(a = 1, b = 2); for (i in seq_along(x))
+    x[[i]] <- x[[i]] ^ 2; y <- as.list(x)'.
   license_family: LGPL
 
 extra:
@@ -48,3 +48,6 @@ extra:
     - johanneskoester
     - bgruening
     - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
