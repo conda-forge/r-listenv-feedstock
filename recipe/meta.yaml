@@ -35,7 +35,7 @@ test:
 
 about:
   home: https://github.com/HenrikBengtsson/listenv
-  license: LGPL-2.1
+  license: LGPL-2.1-or-later
   summary: List environments are environments that have list-like properties.  For instance, the elements of a list environment are ordered and can be accessed and iterated over using index subsetting, e.g. 'x <- listenv(a = 1, b = 2); for (i in seq_along(x)) x[[i]] <- x[[i]] ^ 2; y <- as.list(x)'.
   license_family: LGPL
   license_file:
