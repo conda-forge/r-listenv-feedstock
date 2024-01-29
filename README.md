@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-listenv-feeds
 
 Home: https://github.com/HenrikBengtsson/listenv
 
-Package license: LGPL-2.1
+Package license: LGPL-2.1-or-later
 
 Summary: List environments are environments that have list-like properties.  For instance, the elements of a list environment are ordered and can be accessed and iterated over using index subsetting, e.g. 'x <- listenv(a = 1, b = 2); for (i in seq_along(x)) x[[i]] <- x[[i]] ^ 2; y <- as.list(x)'.
 
