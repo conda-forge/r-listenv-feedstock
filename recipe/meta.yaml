@@ -1,4 +1,4 @@
-{% set version = "0.9.1" %}
+{% set version = "0.10.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/listenv_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/listenv/listenv_{{ version }}.tar.gz
-  sha256: 422aaf487b91c6512b83c05536f8dac255db79b16ee85254acc59a3fda8c1c3b
+  sha256: 6eddc1a201b67b61754a4f18c5d5b641f116b7a0981d8cce506d3989bcb4d6e4
 
 build:
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
